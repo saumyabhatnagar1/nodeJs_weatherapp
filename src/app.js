@@ -4,6 +4,7 @@ const hbs=require('hbs')
 const geocode=require('./utils/geocode.js');
 const weather=require('./utils/weather.js');
 const app=express();
+const port=process.env.PORT || 3000;
 const viewPath=path.join(__dirname,'../templates/views')
 const partialpath=path.join(__dirname,'../templates/partials')
 app.use(express.static(path.join(__dirname,'../public')))
@@ -63,6 +64,6 @@ app.get('/weather',(req,res)=>{
 app.get('*',(req,res)=>{
     res.render('404page',{data:'Page not found',name:'Saumya Bhatnagar',title:'Error'})
 })
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('Server running')
 })
