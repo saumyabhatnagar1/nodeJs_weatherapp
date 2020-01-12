@@ -20,8 +20,8 @@ app.get('/about',(req,res)=>{
     res.render('about',{title:'About',name:'Saumya Bhatnagar'})
 })
 app.get('/help',(req,res)=>{
-    res.render('help',{help:'click here for some help',
-title:'Help Text',
+    res.render('help',{help:'Will be updated!',
+title:'Help Articles',
 name:'Saumya Bhatnagar'})
 })
 
@@ -58,12 +58,10 @@ app.get('/weather',(req,res)=>{
 
 
 
-app.get('/help/*',(req,res)=>{
-    res.render('404page',{data:'Help article not found'});
-})
+
 
 app.get('*',(req,res)=>{
-    res.render('404page',{data:'Page not found',name:'Saumya Bhatnagar'})
+    res.render('404page',{data:'Page not found',name:'Saumya Bhatnagar',title:'Error'})
 })
 app.listen(3000,()=>{
     console.log('Server running')
