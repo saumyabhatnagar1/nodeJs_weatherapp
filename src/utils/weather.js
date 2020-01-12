@@ -9,7 +9,7 @@ const weather=(latitude,longitude,callback)=>{
         else if(body.error)
         callback(body.error,undefined)
         else {
-          
+            
             callback(undefined,
               'The temperature is '+  body.currently.temperature+'. The chances of precipation are '+(body.daily.data[0]. precipProbability)*100+'%. The humidity is '+body.daily.data[0].humidity+'. The maximum temperature and minimum temperature will be '+body.daily.data[0].temperatureHigh+' and  '+body.daily.data[0].temperatureLow )
         }

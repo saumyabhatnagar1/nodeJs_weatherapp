@@ -6,7 +6,7 @@ const geocode=(address,callback)=>{
        {
            callback('Unable to connect',undefined)
        }
-       else if(body.features.length===0){
+       else if(body.features.length==0){
            callback('Error ,unable to fetch the data',undefined)
        }
        else {

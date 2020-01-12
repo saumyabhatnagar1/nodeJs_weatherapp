@@ -11,7 +11,7 @@ weatherform.addEventListener('submit',(e)=>{
     fetch('/weather?address='+city).then((response)=>{
     response.json().then((data)=>{
         if(data.error){
-            return console.log(data.error)
+            document.getElementById('weather').textContent=data.error+'Enter valid location';
         }
         console.log(data)
         document.getElementById('load').textContent=data.location;

@@ -30,12 +30,10 @@ name:'Saumya Bhatnagar'})
 app.get('/weather',(req,res)=>{
     if(!req.query.address)
         return res.send('Provide an adrress');
-    geocode(req.query.address,(error,{longitude,latitude,location}) =>{
+    geocode(req.query.address,(error,{longitude,latitude,location}={}) =>{
         if(error)
         {
-            return res.send({
-                error
-            })
+            return res.send({error})
         }
         weather(latitude,longitude,(error,forecastdata)=>{
             if(error)
